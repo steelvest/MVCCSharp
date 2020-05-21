@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+    string baslik1 = "<h2> Oğuz ÖZGÜL </h2>";
+    string kodHall = HttpUtility.HtmlEncode(baslik1);
+    string yenibaslik = HttpUtility.HtmlDecode(kodHall);
+
+    DateTime tarih = new DateTime(1990,12,28, 5,45,32);
+    DateTime bugun = DateTime.Now;
+
+    string alert = "";
+    if(IsPost)
+    {
+        alert = "<script lang='javascript'>var sonuc = confirm('Butona Tıkladınız'); if(sonuc == true){window.location= '/About/Hakkimizda'} else {" +
+                    "window.location= '/Kodlama/Index'} </script>";
+    }
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @baslik1 <br />
+        @kodHall <br />
+        @yenibaslik <br />
+        @Html.Raw(baslik1) <br /> <br /><br /><br />
+
+        @("dd : " + string.Format("{0: dd MMMM yyyy  HH:mm:ss}", bugun)) 
+        <hr />
+
+        <form method="post">
+            <input type="submit" value="Çalıştır" />
+            @Html.Raw(alert)
+        </form>
+
+    </div>
+</body>
+</html>

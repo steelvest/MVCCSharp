@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MVCCSharp.Models.Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Personel Ekle", "veriEkle", "Personel", new { @class = "btn btn-default" })
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Id)</th>
+        <th>@Html.DisplayNameFor(m => m.ad)</th>
+        <th>@Html.DisplayNameFor(m => m.soyad)</th>
+        <th>
+            @Html.DisplayNameFor(m => m.TCKN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.dogumtarihi)
+        </th>
+    </tr>
+   @foreach(var item in Model)
+   {
+       <tr>
+           <td>@Html.DisplayFor(mItem => item.Id)</td>
+           <td>@Html.DisplayFor(mItem => item.ad)</td>
+           <td>@Html.DisplayFor(mItem => item.soyad)</td>
+           <td>@Html.DisplayFor(mItem => item.TCKN)</td>
+           <td>@Html.DisplayFor(mItem => item.dogumtarihi)</td>
+           <td>@Html.ActionLink("Düzenle", "Duzenle", "Personel", new { id = item.Id }, new { @class = "btn btn-info" })</td>
+           <td>@Html.ActionLink("Sil", "Sil", "Personel", new { id = item.Id }, new { @class = "btn btn-danger" })</td>
+
+       </tr>
+   }
+</table>

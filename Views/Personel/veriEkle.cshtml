@@ -1,0 +1,54 @@
+﻿@model MVCCSharp.Models.Personel
+@{
+    ViewBag.Title = "veriEkle";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <div class="form-horitonzal">
+        <h2>Personel Ekle</h2>
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(m => m.Id, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Id)
+                @Html.ValidationMessageFor(m => m.Id)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.ad)
+                @Html.ValidationMessageFor(m => m.ad)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.soyad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.soyad)
+                @Html.ValidationMessageFor(m => m.soyad)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.TCKN, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.TCKN)
+                @Html.ValidationMessageFor(m => m.TCKN)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.dogumtarihi, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.dogumtarihi)
+                @Html.ValidationMessageFor(m => m.dogumtarihi)
+            </div>
+        </div>
+        <div class="form-group col-md-offset-2 col-md-10">
+            <input type="submit" value="Kaydet" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+@Html.ActionLink("Personel Listesine Dön", "Index")
+

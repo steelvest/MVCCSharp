@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    string ad = "Ali";
+    string soyad = "ÖZGÜL";
+}
+@{ 
+    string Mesaj = "Sayfa Postpack Olmadı";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @*Burası Yorum Satırı*@
+        @ad <br />
+        @soyad
+        
+        @Html.ActionLink("Hakkımızda Sayfasına Git", "Hakkimizda", "About") <br />
+        <a href="@Url.Action("Hakkimizda", "About" )">Hakkımızda</a>
+    </div>
+    <div>
+        <form method="post">
+            @if(IsPost)
+            {
+                Mesaj = "Sayfa PostBack Oldu";
+            }
+             @Mesaj
+            <br />
+            <input type="submit" value="Post Et" />
+        </form>
+    </div>
+    
+</body>
+</html>

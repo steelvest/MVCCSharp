@@ -1,0 +1,51 @@
+﻿@model MVCCSharp.Models.Personel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Personel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TCKN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TCKN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dogumtarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dogumtarihi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
